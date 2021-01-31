@@ -1,0 +1,9 @@
+{
+  "exec": "npm run start",
+  "watch": [
+    "src",
+    ".env"
+  ],
+  "ext": "js,json,ejs",
+  "ignore": ["tests/*"]
+}
