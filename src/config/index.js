@@ -24,5 +24,14 @@ export default {
 		client_id: process.env.OKTA_CLIENT_ID,
 		client_secret: process.env.OKTA_CLIENT_SECRET,
 		token: process.env.OKTA_TOKEN,
+	},
+
+	// Postgres Config
+	pg: {
+		db_name: process.env.PG_DB_NAME,
+		db_host: process.env.PG_DB_HOST,
+		db_port: process.env.POG_DB_PORT,
+		db_username: process.env.PG_DB_USERNAME,
+		db_password: process.env.PG_DB_PASSWORD
 	}
 }
