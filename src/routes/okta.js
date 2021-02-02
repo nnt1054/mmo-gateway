@@ -25,7 +25,7 @@ export default (app) => {
         path: "/users/logout"
       },
       logoutCallback: {
-        path: "/"
+        path: "/users/logout/callback"
       }
     }
   });

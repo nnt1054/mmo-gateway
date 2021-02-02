@@ -1,4 +1,5 @@
 var okta = require("@okta/okta-sdk-nodejs");
+import logger from '/loaders/logger';
 
 var oktaClient = new okta.Client({
 	orgUrl: process.env.OKTA_ORG_URL,
