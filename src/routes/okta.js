@@ -2,6 +2,7 @@ import config from '/config';
 
 import { Router } from 'express';
 import { ExpressOIDC } from "@okta/oidc-middleware";
+import getOrCreateUser from '/middlewares/getOrCreateUser'
 
 const router = Router();
 
@@ -19,13 +20,14 @@ export default (app) => {
       },
       loginCallback: {
         path: "/authorization-code/callback",
+        handler: getOrCreateUser,
         afterCallback: "/dashboard"
       },
       logout: {
         path: "/users/logout"
       },
       logoutCallback: {
-        path: "/users/logout/callback"
+        path: "/logout/callback"
       }
     }
   });

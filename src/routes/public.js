@@ -14,4 +14,14 @@ export default (app) => {
 		}
 		res.render('index', context);
 	});
+
+	router.get("/authorization-code/callback", (req, res) => {
+		res.redirect("/dashboard");
+	});
+
+	router.get("/logout/callback", (req, res) => {
+		req.logout();
+		res.redirect("/");
+	});
+
 }

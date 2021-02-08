@@ -4,15 +4,15 @@ import middlewares from '/middlewares';
 const router = Router();
 
 export default (app) => {
-	app.use('/users', router);
+	app.use('/users', middlewares.loginRequired, router);
 
 	// // Log a user out
 	// router.get("/logout", (req, res) => {
 	// 	res.redirect("/");
 	// });
 
-	router.get("/logout/callback", (req, res) => {
-		req.logout();
-		res.redirect("/");
-	});
+	router.get('/profile', (req, res) => {
+		res.json(req.userContext)
+	})
+
 }
