@@ -4,7 +4,7 @@ import logger from './logger';
 
 export default async ( app ) => {
 
-	// databaseLoader()
+	databaseLoader()
 	const sequelize = require('/models');
 	logger.info('✌️ DB loaded and connected!');
 
