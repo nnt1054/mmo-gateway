@@ -1,10 +1,10 @@
 <%- include('../partials/head'); -%>
-<%- include('../partials/header'); -%>
 <body>
-
-	<h1> <%= title %> </h1>
-	<h3> <%= description %> </h3>
-	<%- content %>
-
+	<div class='content-container'>
+		<%- include('../partials/header'); -%>
+		<h1> <%= title %> </h1>
+		<h3> <%= description %> </h3>
+		<%- content %>
+		<%- include('../partials/footer'); -%>
+	</div>
 </body>
-<%- include('../partials/footer'); -%>
