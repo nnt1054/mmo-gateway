@@ -2,7 +2,7 @@
 title: Just hack'n
 description: Nothing to see here
 ---
- 
+
 #### Background
 I wanted to make this site for three primary reasons:
 1. Showcase personal projects/work along with my general work flow
@@ -13,4 +13,6 @@ Other reasons for making this site include practicing web design and development
 
 #### Userflow
 Here's a low quality H I G H spec of the site userflow :)
+
+
 ![userflow :)](https://www.ntoledo.me/assets/images/me.jpg)

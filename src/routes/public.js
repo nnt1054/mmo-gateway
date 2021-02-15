@@ -32,15 +32,29 @@ export default (app) => {
 		res.render('pages/index', {});
 	});
 
+	router.get("/blog/:article_name", (req, res) => {
+		var article_name = req.params.article_name;
+		fs.readFile(articlePath + '/'+ article_name + '.md', 'utf8', function(err, data) {
+			if (err) {
+				res.status(404).render('404');
+			}
+			var content = fm(data);
+			var html_content = marked(content.body);
+			var context = {
+				title: content.attributes.title,
+				description: content.attributes.description,
+				content: html_content
+			}
+			res.render('pages/article', context);
+		})
+	}) 
+
 	router.get("/article", (req, res) => {
-		var context = {
-			content: "",
-		}
 		fs.readFile(articlePath + '/test.md', 'utf8', function(err, data) {
 			if (err) throw err
 			var content = fm(data);
 			var html_content = marked(content.body);
-			context = {
+			var context = {
 				title: content.attributes.title,
 				description: content.attributes.description,
 				content: html_content

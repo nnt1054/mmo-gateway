@@ -1,9 +1,97 @@
 <div id='header-container'>
 	<div class='header-section'>
-		<a class="header-home" href='/article'> <span> Temp Story Online </span> </a>
+		<a class="header-icon" href='/article'> <img src="https://www.ntoledo.me/assets/images/me.jpg"></a>
+		<a class="header-title" href='/article'> <span> Temp Story Online </span> </a>
+		<a class="header-link" href="#"> <span>players</span> </a>
+		<a class="header-link" href="#"> <span>skills</span> </a>
 	</div>
 	<div class='header-section'>
+		<a class="header-link" href="#"> <span>blog</span> </a>
 		<a class="header-link" href="#"> <span>store</span> </a>
 		<a class="header-link" href="#"> <span>account</span> </a>
 	</div>
 </div>
+<br/><br/>
+
+<style>
+	#header-container {
+		width: 100%;
+		height: 64px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.header-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.header-section > * {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.header-link {
+		min-width: 106px;
+		margin-left: 12px;
+		margin-right: 12px;
+		padding: 0px 12px;
+		border: 2px solid black;
+		border-radius: 6px;
+		background: white;
+		box-shadow: 5px 5px;
+		transform: translateY(-5px) translateX(-5px);
+		cursor: pointer;
+		height: 32px;
+		display: flex;
+		z-index: 10;
+		color: black;
+		text-decoration: none;
+	}
+
+	.header-link:hover {
+		transition: 0.1s;
+		box-shadow: 2px 2px;
+		transform: translateY(-2px) translateX(-2px);
+		text-decoration: none;
+	}
+
+	.header-link:active:hover {
+		transition: 0.05s;
+		box-shadow: 0px 0px;
+		transform: translateY(0px) translateX(0px);
+	}
+
+	.header-link > span {
+		margin: auto;
+	}
+
+	.header-title {
+		text-decoration: none;
+		color: black;
+		font-size: 24pt;
+		margin-right: 24px;
+	}
+
+	.header-title:hover {
+		cursor: pointer;
+	}
+
+	.header-title > span {
+	}
+
+	.header-icon {
+		margin-right: 12px;
+	}
+
+	.header-icon > img {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		border: solid black 2px;
+		background: seagreen;
+	}
+</style>
