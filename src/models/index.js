@@ -3,7 +3,7 @@ import { Sequelize } from 'sequelize';
 import config from '/config';
 import logger from '/loaders/logger';
 
-import User from './user'
+import Account from './account'
 
 const sequelize = new Sequelize(config.pg.db_name, config.pg.db_username, config.pg.db_password, {
 	host: config.pg.db_host,
@@ -15,7 +15,7 @@ const sequelize = new Sequelize(config.pg.db_name, config.pg.db_username, config
 // const sequelize = new Sequelize('sqlite::memory:')
 
 const models = [
-	User,
+	Account,
 ];
 
 // We define all models according to their files.

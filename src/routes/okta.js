@@ -2,7 +2,7 @@ import config from '/config';
 
 import { Router } from 'express';
 import { ExpressOIDC } from "@okta/oidc-middleware";
-import getOrCreateUser from '/middlewares/getOrCreateUser'
+import getOrCreateAccount from '/middlewares/getOrCreateAccount'
 
 const router = Router();
 
@@ -16,20 +16,31 @@ export default (app) => {
     scope: "openid profile",
     routes: {
       login: {
-        path: "/users/login"
+        path: "/login"
       },
       loginCallback: {
         path: "/authorization-code/callback",
-        handler: getOrCreateUser,
-        afterCallback: "/dashboard"
+        handler: getOrCreateAccount,
+        afterCallback: "/"
       },
       logout: {
-        path: "/users/logout"
+        path: "/logout"
       },
       logoutCallback: {
         path: "/logout/callback"
       }
     }
+  });
+
+  // callback route after logging in
+  oidc.router.get("/authorization-code/callback", (req, res) => {
+    res.redirect("/");
+  });
+
+  // callback route after logging out
+  oidc.router.get("/logout/callback", (req, res) => {
+    req.logout();
+    res.redirect("/");
   });
 
   app.use(oidc.router);

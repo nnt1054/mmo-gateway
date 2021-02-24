@@ -1,15 +1,15 @@
 import sequelize from '/models'
 import logger from '/loaders/logger';
 
-const getOrCreateUser = async (req, res, next) => {
+const getOrCreateAccount = async (req, res, next) => {
 
-	const User = sequelize.models.User;
+	const Account = sequelize.models.Account;
     if (!req.userContext.userinfo.sub) {
     	return next();
     }
 
 	try {
-	    const [user, created] = await User.findOrCreate({
+	    const [user, created] = await Account.findOrCreate({
 	    	where: { userId: req.userContext.userinfo.sub },
 	    	defaults: {
 	    		coins: 0
@@ -22,4 +22,4 @@ const getOrCreateUser = async (req, res, next) => {
 
 }
 
-export default getOrCreateUser;
+export default getOrCreateAccount;

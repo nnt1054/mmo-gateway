@@ -1,0 +1,14 @@
+<%- include('../partials/head'); -%>
+<body>
+	<div class='content-container'>
+		<%- include('../partials/header'); -%>
+		<h1> Blog Home Page </h1>
+		<p> display list of blog posts </p>
+
+		<% Object.keys(posts).forEach(function(post) { %>
+		  <a href=<%- posts[post].href %>> <%- posts[post].title %> </a>
+		<% }); %>
+
+		<%- include('../partials/footer'); -%>
+	</div>
+</body>
