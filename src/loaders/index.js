@@ -4,7 +4,7 @@ import logger from './logger';
 
 export default async ( app ) => {
 
-	databaseLoader()
+	// databaseLoader() // enable when running with pg instead of sqlite
 	const sequelize = require('/models');
 	logger.info('✌️ DB loaded and connected!');
 

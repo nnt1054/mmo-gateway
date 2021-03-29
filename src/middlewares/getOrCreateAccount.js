@@ -10,7 +10,7 @@ const getOrCreateAccount = async (req, res, next) => {
 
 	try {
 	    const [user, created] = await Account.findOrCreate({
-	    	where: { userId: req.userContext.userinfo.sub },
+	    	where: { accountId: req.userContext.userinfo.sub },
 	    	defaults: {
 	    		coins: 0
 	    	}

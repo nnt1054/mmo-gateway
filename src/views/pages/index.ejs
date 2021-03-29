@@ -4,6 +4,13 @@
 		<%- include('../partials/header'); -%>
 		<h1> Home Page! </h1>
 		<p> lorem ipsum blah blah </p>
+	    <% if(!isAuthenticated) { %>
+	      <a href="/login"> Log In / Register </a> <br>
+	    <% } else { %>
+	        <form method="post" action="/logout">
+	          <button id="logout-button" type="submit">Logout</button>
+	        </form>
+	    <% } %>
 		<%- include('../partials/footer'); -%>
 	</div>
 </body>

@@ -9,7 +9,7 @@
     <p>Welcome to <%= title %></p>
 
     <% if(!isAuthenticated) { %>
-      <a href="/users/login"> Log In / Register </a> <br>
+      <a href="/login"> Log In / Register </a> <br>
     <% } else { %>
         <form method="post" action="/users/logout">
           <button id="logout-button" type="submit">Logout</button>
