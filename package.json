@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "_start": "NODE_PATH=dist/ node ./dist/app.js",
+    "_start": "NODE_PATH=dist/ node ./dist/index.js",
     "start": "npm-run-all build _start",
-    "transpile": "babel ./src --out-dir dist --copy-files",
     "clean": "rimraf dist",
+    "transpile": "babel ./src --out-dir dist --copy-files",
     "build": "npm-run-all clean transpile",
     "watch": "nodemon"
   },
