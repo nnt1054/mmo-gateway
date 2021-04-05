@@ -13,7 +13,6 @@ export default {
 
 	port: parseInt(process.env.PORT, 10),
 	host_url: process.env.HOST_URL,
-	root_dir: process.env.NODE_ENV,
 
 	// Express Config
 	sessionSecret: process.env.SESSION_SECRET,
